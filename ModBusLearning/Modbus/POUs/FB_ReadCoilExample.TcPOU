@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_ReadCoilExample" Id="{67787ba6-a0c7-477e-9f3e-97f287d04096}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ReadCoilExample
+VAR
+	fbMBReadCoils : FB_MBReadCoils;
+	nReadValue : BYTE;
+	aStateMachine : (WAIT, TRIGGER, READ);
+	fbTrigger : R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTrigger();
+IF fbTrigger.Q THEN
+	IF aStateMachine := WAIT THEN
+		aStateMachine := TRIGGER;
+	END_IF
+END_IF
+CASE aStateMachine OF
+	WAIT:
+		// do nothing
+	TRIGGER:
+		fbMBReadCoils(
+		sIPAddr:= '192.168.5.34' , // IP of virtual machine
+		nTCPPort:= , 
+		nUnitID:= , 
+		nQuantity:= , 
+		nMBAddr:= , 
+		cbLength:= SIZEOF(nReadValue), 
+		pDestAddr:= ADR(nReadValue), 
+		bExecute:= TRUE, 
+		tTimeout:= , 
+		bBusy=> , 
+		bError=> , 
+		nErrId=> , 
+		cbRead=> );
+		
+		aStateMachine := READ;
+	READ:
+		// waite for response
+		fbMBReadCoils(bExecute := FALSE); // read until we get sth from modbus app in windows
+		IF NOT fbMBReadCoils.bBusy OR fbMBReadCoils.bError THEN
+			aStateMachine := WAIT;
+		END_IF
+	
+END_CASE
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ReadCoilExample">
+      <LineId Id="51" Count="2" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="2" />
+      <LineId Id="36" Count="12" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="59" Count="2" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

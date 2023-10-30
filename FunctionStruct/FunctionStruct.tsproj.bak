@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53">
+	<Project ProjectGUID="{540A9D4E-FDF8-4E54-8F29-E6380359BC98}" Target64Bit="true" ShowHideConfigurations="#x3c7">
+		<System>
+			<Settings MaxCpus="4" NonWinCpus="1">
+				<Cpu CpuId="3"/>
+			</Settings>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask1</Name>
+				</Task>
+				<Task Id="5" Priority="22" CycleTime="100000" AmsPort="352" AdtTasks="true">
+					<Name>PlcTask2</Name>
+				</Task>
+				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
+					<Name>PlcTask3</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{30BAD694-8DBB-44E3-A5DC-24F4AD602AD5}" Name="FncStructPlc" PrjFilePath="FncStructPlc\FncStructPlc.plcproj" TmcFilePath="FncStructPlc\FncStructPlc.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FncStructPlc\FncStructPlc.tmc" TmcHash="{29E2B3F2-8141-2563-DF40-D71775DB011C}">
+					<Name>FncStructPlc Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{1AA6FBB3-5660-45B3-A2B8-571C07245D5F}" Name="objectOriented" PrjFilePath="objectOriented\objectOriented.plcproj" TmcFilePath="objectOriented\objectOriented.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="objectOriented\objectOriented.tmc" TmcHash="{9500AB06-2EF8-08FA-EA5E-91D98A184B2C}">
+					<Name>objectOriented Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>21</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{5B413766-43A1-4055-A82E-256B4D372FC7}" Name="MemRingBuffer" PrjFilePath="MemRingBuffer\MemRingBuffer.plcproj" TmcFilePath="MemRingBuffer\MemRingBuffer.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{52F5FFAF-D236-C76A-511D-13471AF22B1E}">
+					<Name>MemRingBuffer Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010050</OTCID>
+							</ManualConfig>
+							<Priority>22</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="22" OTCID="#x08502081"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{EE730535-1612-4D45-AEA3-56B484CC1A58}" Name="factorialPLC" PrjFilePath="factorialPLC\factorialPLC.plcproj" TmcFilePath="factorialPLC\factorialPLC.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{9BC932C7-1C2E-39EF-08BC-DFDABF91C494}">
+					<Name>factorialPLC Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010060</OTCID>
+							</ManualConfig>
+							<Priority>23</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="42bacbb2-5052-4ed1-a1da-659dd668a4a3">FB_WRITESINGLEREGEXAMPLE_1</Type>
+      <From>FB_ReadCoilExample_1</From>
+      <To>FB_WriteSingleRegExample</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

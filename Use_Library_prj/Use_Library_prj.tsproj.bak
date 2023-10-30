@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53">
-	<Project ProjectGUID="{5043E5C3-60CF-4AC1-9CC7-7B4720B5134C}" Target64Bit="true" ShowHideConfigurations="#x3c7">
+	<Project ProjectGUID="{824BFCA5-BE4F-4FA5-B563-4C818861D23A}" Target64Bit="true" ShowHideConfigurations="#x3c7">
 		<System>
-			<Settings MaxCpus="4" NonWinCpus="1">
-				<Cpu CpuId="3"/>
-			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -12,9 +9,9 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{83A79F14-4E72-40A1-84FA-EE0823AD2AC0}" Name="DataTypesPLC" PrjFilePath="DataTypesPLC\DataTypesPLC.plcproj" TmcFilePath="DataTypesPLC\DataTypesPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DataTypesPLC\DataTypesPLC.tmc" TmcHash="{683CE1E1-6B06-8A01-F8DD-8DB8E67C534C}">
-					<Name>DataTypesPLC Instance</Name>
+			<Project GUID="{010022F2-FD39-4DEB-A57F-0105B6801EB6}" Name="testLibraryPrj" PrjFilePath="testLibraryPrj\testLibraryPrj.plcproj" TmcFilePath="testLibraryPrj\testLibraryPrj.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="testLibraryPrj\testLibraryPrj.tmc" TmcHash="{CB3150E4-6575-0A7D-047E-88DAFADEC01C}">
+					<Name>testLibraryPrj Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>

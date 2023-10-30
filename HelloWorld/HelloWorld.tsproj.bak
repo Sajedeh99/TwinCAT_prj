@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53">
-	<Project ProjectGUID="{5043E5C3-60CF-4AC1-9CC7-7B4720B5134C}" Target64Bit="true" ShowHideConfigurations="#x3c7">
+	<Project ProjectGUID="{6002A1F5-F0A6-4EB2-9EAB-B4CCA32FBA5D}" Target64Bit="true" ShowHideConfigurations="#x3c7">
 		<System>
 			<Settings MaxCpus="4" NonWinCpus="1">
 				<Cpu CpuId="3"/>
@@ -12,9 +12,9 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{83A79F14-4E72-40A1-84FA-EE0823AD2AC0}" Name="DataTypesPLC" PrjFilePath="DataTypesPLC\DataTypesPLC.plcproj" TmcFilePath="DataTypesPLC\DataTypesPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DataTypesPLC\DataTypesPLC.tmc" TmcHash="{683CE1E1-6B06-8A01-F8DD-8DB8E67C534C}">
-					<Name>DataTypesPLC Instance</Name>
+			<Project GUID="{28764417-B88C-45E2-9EFD-C1B46DD278B2}" Name="HelloWorldPLC" PrjFilePath="HelloWorldPLC\HelloWorldPLC.plcproj" TmcFilePath="HelloWorldPLC\HelloWorldPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{6FEF6E70-7067-41C1-EB77-4869B0D288A9}">
+					<Name>HelloWorldPLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
