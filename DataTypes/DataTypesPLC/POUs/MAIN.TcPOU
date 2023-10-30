@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{efc4c9e5-0dae-4725-b959-1d5f1b22e40d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	IntVAr : INT;
+	StrVar : STRING;
+	FloatVar : REAL;
+	RetunBytesINT : UDINT;
+	RetunBytesSTR : UDINT;
+	RetunBytesF : UDINT;
+	
+	nVariable : INT := 20;
+	pPointer : POINTER TO INT := ADR(nVariable);
+	RetunBytesPtr : UDINT;
+	
+	Variable : INT := 20;
+	rReference : REFERENCE TO INT REF= Variable;
+	RetunBytesRef : UDINT;
+	aArray : ARRAY [1..5] OF INT := [10, 20, 30, 40, 50];
+	nINT : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[RetunBytesINT := SIZEOF(IntVAr);
+RetunBytesSTR := SIZEOF(StrVar);
+RetunBytesF := SIZEOF(FloatVar);
+
+pPointer^ := 30;
+RetunBytesPtr := SIZEOF(pPointer);
+
+rReference := 30;
+RetunBytesRef := SIZEOF(rReference);
+
+aArray[1] := 42;
+nINT := aArray[1] + aArray[4];]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="37" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{e9a7dbc3-4bf2-4892-888c-7d3496da100e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	numFactorial : ULINT;
+	resFactorial : ULINT;
+	setBool : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF setBool THEN
+	resFactorial := IO.F_factorial(n := numFactorial);
+	setBool := FALSE;	
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="1" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
