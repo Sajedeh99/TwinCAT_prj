@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="F_factorial" Id="{f87b3d5b-dbf2-4dae-adf5-c11145cff916}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_factorial : ULINT
+VAR_INPUT
+	n : ULINT;
+END_VAR
+VAR
+	tempFact : ULINT;
+	i : ULINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[tempFact := 1;
+FOR i := 1 TO n BY 1 DO
+	tempFact := i * tempFact;
+END_FOR
+F_factorial := tempFact;]]></ST>
+    </Implementation>
+    <LineIds Name="F_factorial">
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

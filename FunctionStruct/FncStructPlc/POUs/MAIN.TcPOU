@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{8333e720-6ccd-401f-8b59-18721b58bade}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	aEvent : ARRAY[1..100] OF ST_Event;
+	sTempString : STRING(255);
+	
+	nReturnGreater : INT;
+	nReturnSmaller : INT;
+	
+	UpdateEventTimestam : ST_Event;
+	aBoolean : BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT aBoolean THEN
+	sTempString := aEvent[33].sEventText;
+	
+	Greater_Smaller(nNumber1 := 8,
+		nNumber2 := 15,
+		nGreater => nReturnGreater,
+		nSmaller => nReturnSmaller);
+		
+	UpdateEventTimestampWithSystemTime(stEvent := UpdateEventTimestam);
+	aBoolean := TRUE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="34" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="10" Count="2" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

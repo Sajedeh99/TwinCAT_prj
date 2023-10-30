@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{a2a3244c-b79c-403e-8004-75bd9a7c7bef}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbProfiler : Profiler;
+	stProfilerData : PROFILERSTRUCT;
+	numFactorial : ULINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbProfiler(START := TRUE, RESET := FALSE);
+F_factorial(n := numFactorial);
+fbProfiler(START := FALSE);
+stProfilerData := fbProfiler.DATA;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="10" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
